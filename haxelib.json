@@ -1,0 +1,11 @@
+{
+	"name": "monoexport",
+	"url" : "https://github.com/ibilon/monoexport/",
+	"license": "MIT",
+	"tags": ["cs", "cpp"],
+	"description": "Generate code used to launch a haxe executable from a c++ application",
+	"version": "1.0.0",
+	"releasenote": "Initial release",
+	"contributors": ["_ibilon"],
+	"dependencies": {}
+}

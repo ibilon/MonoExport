@@ -1,0 +1,2 @@
+--macro include("monoexport")
+--macro monoexport.MonoExport.init()
