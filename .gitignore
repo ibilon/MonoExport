@@ -1,3 +1,4 @@
 example/output/*
 example/host
+example/MonoExport.cpp
 example/MonoExport.hpp

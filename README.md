@@ -17,7 +17,9 @@ You can do either `haxelib install monoexport` or `haxelib git monoexport https:
 
 Add `-lib monoexport` to you hxml, and annotate the classes that should be exported with `@:monoExport`.
 
-You can configure the name of the generated c++ file with `-D monoexport-out=filename.hpp`.
+You can configure the name of the generated c++ files with `-D monoexport-out=filename`.
+
+You can also configure the name used in the include statement of the cpp file with `-D monoexport-include=filename`.
 
 The following types are supported in argument/return values:
 
@@ -55,7 +57,7 @@ class MyHaxeClass {
 }
 ```
 
-Compile it with `haxe MyHaxeClass -lib monoexport -cs output`.
+Compile it with `haxe MyHaxeClass -lib monoexport -cs output`, or optionally `haxe MyHaxeClass -lib monoexport -cs output -D monoexport-out=custom`.
 
 ```c++
 #include "MonoExport.hpp"
@@ -67,8 +69,10 @@ int main() {
 	MonoExport::clean();
 }
 ```
+If you used a custom output filename change the include to `"custom.hpp"`
 
-Compile it (on linux) with `g++ main.cpp $(pkg-config --cflags --libs mono-2) -o host`.
+Compile it (on linux) with `g++ MonoExport.cpp main.cpp $(pkg-config --cflags --libs mono-2) -o host`.
+Adapt the first cpp filename to `custom.cpp` in case of custom output filename.
 
 Running it, `./host`, will print:
 ```
