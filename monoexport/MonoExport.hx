@@ -276,7 +276,7 @@ namespace MonoExport
 		o.writeString("\t\tMonoClass* boot = mono_class_from_name(image, \"cs\", \"Boot\");
 		MonoMethod* method = mono_class_get_method_from_name(boot, \"init\", 0);
 		void* args[0];
-		MonoObject* r = mono_runtime_invoke(method, NULL, args, NULL);
+		mono_runtime_invoke(method, NULL, args, NULL);
 	}
 
 	void clean ()
